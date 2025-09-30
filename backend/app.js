@@ -17,6 +17,12 @@ databaseConnection;
 
 app.use("/api/v1", noteRoute);
 app.use("/api/v1/about", aboutRoute);
+app.get("/", (req, res) => {
+  res.send({
+    activeStatus: true,
+    error: false,
+  });
+});
 app.listen(PORT, () => {
   console.log(`server running on PORT: ${PORT}`);
 });
