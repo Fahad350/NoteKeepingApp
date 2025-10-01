@@ -8,7 +8,11 @@ import aboutRoute from "./routers/aboutRoute.js";
 dotenv.config({ path: "./config.env" });
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:4000", "https://note-keepings-app.netlify.app/"],
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
