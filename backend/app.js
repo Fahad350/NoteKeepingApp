@@ -11,6 +11,8 @@ const app = express();
 app.use(
   cors({
     origin: ["http://localhost:4000", "https://note-keepings-app.netlify.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
 app.use(express.json());
